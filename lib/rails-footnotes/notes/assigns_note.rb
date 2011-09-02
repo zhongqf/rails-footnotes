@@ -13,7 +13,9 @@ module Footnotes
                             :@_request,
                             :@db_rt_before_render,
                             :@db_rt_after_render,
-                            :@view_runtime
+                            :@view_runtime,
+                            :@_response_body,
+                            :@_view_renderer
                           ]
       cattr_accessor :ignored_assigns, :instance_writter => false
 
