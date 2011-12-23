@@ -5,7 +5,6 @@ module Footnotes
         if defined?(SwitchUser)
           @users = SwitchUser.available_users
           @controller = controller
-          @template = controller.instance_variable_get(:@template)
         end
       end
 
@@ -33,10 +32,10 @@ module Footnotes
                 linktext = "[#{user.send(identifier)}] #{user.send(name)}"
                 
                 if current and current.send(identifier) == user.send(identifier)
-                  links << @template.content_tag(:strong, linktext)
+                  links << "<strong>#{linktext}</strong>"
                 else
                   url = '/switch_user?scope_identifier=' + encodeURIComponent("#{scope}_#{user.send(identifier)}")
-                  links << @template.link_to(linktext, url)
+                  links << "<a href='#{url}'>#{linktext}<a>"
                 end
               end
             end
