@@ -24,7 +24,7 @@ module Footnotes
             links = []
           
             @users.each do |scope, user_proc|
-              current = @controller.instance_variable_get(:"current_#{scope}")
+              current = @controller.instance_variable_get(:"@current_#{scope}")
               identifier = SwitchUser.available_users_identifiers[scope]
               name = SwitchUser.available_users_names[scope]
               user_proc.call.each do |user|
