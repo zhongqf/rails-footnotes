@@ -18,7 +18,7 @@ module Footnotes
 
       def content
         if defined?(SwitchUser)
-          if @users.empty? or @template.nil?
+          if @users.empty?
             ""
           else
             links = []
