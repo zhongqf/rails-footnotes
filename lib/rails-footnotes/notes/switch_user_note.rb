@@ -34,7 +34,7 @@ module Footnotes
                 if current and current.send(identifier) == user.send(identifier)
                   links << "<strong>#{linktext}</strong>"
                 else
-                  url = '/switch_user?scope_identifier=' + encodeURIComponent("#{scope}_#{user.send(identifier)}")
+                  url = '/switch_user?scope_identifier=' + escape("#{scope}_#{user.send(identifier)}")
                   links << "<a href='#{url}'>#{linktext}</a>"
                 end
               end
