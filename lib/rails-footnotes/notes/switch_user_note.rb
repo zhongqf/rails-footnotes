@@ -35,7 +35,7 @@ module Footnotes
                   links << "<strong>#{linktext}</strong>"
                 else
                   url = '/switch_user?scope_identifier=' + encodeURIComponent("#{scope}_#{user.send(identifier)}")
-                  links << "<a href='#{url}'>#{linktext}<a>"
+                  links << "<a href='#{url}'>#{linktext}</a>"
                 end
               end
             end
