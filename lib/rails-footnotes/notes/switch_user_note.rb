@@ -30,7 +30,7 @@ module Footnotes
               name = SwitchUser.available_users_names[scope]
               user_proc.call.each do |user|
                 
-                linktext = "[#{user.send(identifier}] #{user.send(name)}"
+                linktext = "[#{user.send(identifier)}] #{user.send(name)}"
                 
                 if current and current.send(identifier) == user.send(identifier)
                   links << @template.content_tag(:strong, linktext)
